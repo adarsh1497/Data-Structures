@@ -21,10 +21,11 @@ int main(){
 	printf("Enter the number of elements : ");
 	scanf("%d",&n);
 	for(int i = 0 ; i < n ; i ++){	
-		printf("Enter the %d element  : ", i);
+		printf("Enter the %d element  : ", i+1);
 		scanf("%d",&ar[i]);
 	}
 	ShellSort(ar , n);
+	printf("Array after sorting is : ");
 	for(int i = 0 ; i < n ;i++)
 		printf("%d ",ar[i]);
 	return 0;
