@@ -25,13 +25,13 @@ int main(){
 	int ar[100]  , n ;
 	printf("Enter the size of array : ");
 	scanf("%d",&n);
-	printf("Enter the elements  : ");
-	for(int i = 0 ; i< n ; i ++)
+	
+	for(int i = 0 ; i< n ; i ++){
+		printf("Enter the %d element : " , i+1 );
 		scanf("%d", &ar[i] );
-	printf("Array before sorting \n");
-	for(int i = 0 ; i < n ; i ++)
-		printf("%d ",ar[i]);
-	printf("\n");
+		}
+		
+	
 	BubbleSort(ar , n);
 	printf("Array after sorting \n");
 	for(int i = 0 ; i < n ; i ++)

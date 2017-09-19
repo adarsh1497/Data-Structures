@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<math.h>
+//Program for Merging 
+
 void Merge(int ar[] , int p , int q , int r){
 	static double f = INFINITY;
 	int n1 = q-p+1 , i , j;
@@ -22,15 +24,21 @@ void Merge(int ar[] , int p , int q , int r){
 			j+=1;
 	}
 }
+
+// Main Mergesort Program
+
 void MergeSort(int ar[] , int p , int r){
 	int q;
 	if(p < r ){
-		q = ceil((p+r)/2);
-		MergeSort(ar , p ,q);
-		MergeSort(ar , q+1 , r);
-		Merge( ar ,p , q, r);
+		q = ceil((p+r)/2);		// This finds the middle value of array
+		MergeSort(ar , p ,q);		// This function divides the first half of  array recursively .
+		MergeSort(ar , q+1 , r);	// This function divides the second half of  array recursively .
+		Merge( ar ,p , q, r);		// This function merges all the sub-arrays in ascending order .
 	}
 }
+
+// Driver program to take inputs and for sorting .
+
 int main(){
 	int n , ar[100] = {0} ;
 	printf("Enter the number of elements : ");
