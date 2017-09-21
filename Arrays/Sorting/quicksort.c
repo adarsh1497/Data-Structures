@@ -1,20 +1,21 @@
 #include<stdio.h>
-void swap(int x , int y){
+void swap(int *x , int *y){
 	int t;
-	t = x;
-	x = y;
-	y = t;
+	t = *x;
+	*x = *y;
+	*y = t;
 }
 int partition(int a[] , int p , int r){
 	int j,i = p;
-	int x = a[i];
+	int x = a[p];
 	for( j = p+1 ; j <= r ; j++){
-		if(a[j] <= a[i] ){
+		if(a[j] <= x ){
 			i+=1;
-			swap(a[i], a[j]);
+			swap( &a[i] , &a[j]);
 		}
 	}
-	swap(a[i] , a[p]);
+	swap( &a[i] , &a[p]);
+	return i;
 }
 
 void quickSort(int a[] , int p ,int r){
@@ -24,6 +25,7 @@ void quickSort(int a[] , int p ,int r){
 		quickSort(a , p ,q-1);
 		quickSort(a , q+1 , r);
 	}
+
 }
 int main(){
 	int n;
@@ -38,4 +40,10 @@ int main(){
 	for(int i = 1 ; i <= n ; i++){
 		printf("%d " , a[i]);
 	}
-}		
+	int m = 4, b = 6;
+	swap(&m,&b);
+	printf("\n%d %d\n",m,b); 
+}	
+
+
+	
